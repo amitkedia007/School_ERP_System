@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'homepagecss/css/welcomestucss.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,500;1,700&display=swap" rel="stylesheet">
+    <title>Selection page</title>
+</head>
+<body>
+<style>
+    body{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url("{% static 'images/edu2.jpg' %}");
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+    position: relative;
+}
+
+</style>
+<div class="course">
+    <h1 align="center">{{msg}}</h1>
+    <h1 align="center"> Choose Your Course here...</h1>
+    <p align="center">This are some of the best courses we offer. Every course have almost same duration to complete.
+        You can opt more than one course too.</p>
+    <form class="mt-15" id="course-form" action="/fetch_all_view/">
+        {% csrf_token %}
+        <select class="selectlist" name="scourse" required>
+            <option value="">Select Course</option>
+            <option value="Computer Education">Computer Education</option>
+            <option value="Arts">Arts</option>
+            <option value="Sports">Sports</option>
+            <option value="Pyschology">Pyschology</option>
+        </select>
+        <div class="faculty">
+            <h1> Choose Your Faculty Here...</h1>
+            <p>These are our awesome faculties. You can <ta></ta>ke a demo class of individuals and then you can opt for which
+                faculty you want to study with..</p>
+            <div class="course-selection">
+                <select class="selectlist" name="sfaculty" required>
+                    {% if teacher %}
+                    <option>Select Faculty</option>
+                    {% for teach in teacher %}
+                    <option>{{teach.tname}}</option>
+                    {% endfor %}
+                    {% endif %}
+                </select>
+            </div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="{% static 'homepagecss/css/askstaff.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,500;1,700&display=swap" rel="stylesheet">
+    <title>Ask staff</title>
+</head>
+<body>
+<style>
+body{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url("{% static 'images/school.jpg' %}");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+</style>
+<h1>Please Choose the Available option</h1>
+<a href ="{% url 'teachingreg' %}" class="hero-btn"> Teaching Staff </a>
+<a href="{% url 'nonteachingreg' %}" class="hero-btn2"> Non-Teaching Staff </a>
+</body>
+</html>

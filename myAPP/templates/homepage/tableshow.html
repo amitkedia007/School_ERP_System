@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'homepagecss/css/tableshowstyle.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,500;1,700&display=swap" rel="stylesheet">
+    <title>Students Data</title>
+</head>
+<body>
+    <style>
+      body{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url("{% static 'images/school.jpg' %}");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+      }
+    </style>
+    <a href="{% url 'home'%}">Add New Student Details Here...</a>
+    <h1 align="center">----------------All Students Details--------------</h1>
+    <table align="center">
+        <tr>
+            <th>ID</th>
+            <th>Full Name.</th>
+            <th>Email Id</th>
+            <th>Mobile No.</th>
+            <th>Password</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        {% if students %}
+        {% for stu in students %}
+        <tr>
+            <td>{{stu.id}}</td>
+            <td>{{stu.sname}}</td>
+            <td>{{stu.semail}}</td>
+            <td>{{stu.smobileno}}</td>
+            <td>{{stu.spassword}}</td>
+            <td> <a href="{% url 'edit' pk=stu.pk %}" > Edit </a> </td>
+            <td> <a href="{% url 'delete' pk=stu.pk %}" > Delete </a> </td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Faculty's Registration Form</title>
+    <link rel="stylesheet" href="{% static 'homepagecss/css/teachingregcss.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,500;1,700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+<style>
+body{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url("{% static 'images/school.jpg' %}");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+</style>
+    <div class="container">
+      <div class="title">
+        Faculty's Registration Form
+      </div>
+      <form action="/saveteacher/" method="post">
+        {% csrf_token %}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">ID</span>
+            <input type="text" name="tid" placeholder="Enter your ID Number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" name="tname" placeholder="Enter your Name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email Id</span>
+            <input type="text" name="temail" placeholder="Enter your Email Id" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text" name="tpassword" placeholder="Enter Password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Mobile Number</span>
+            <input type="text" name="tmobileno" placeholder="Enter your Mobile Number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Branch</span>
+            <input type="text" name="tbranch" placeholder="Enter your Branch" required>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+        <div class="login" align="center">
+      <a href="{% url 'loginteach'%}">Already Registered</a>
+      </div>
+      </form>
+    </div>
+  </body>
+</html>

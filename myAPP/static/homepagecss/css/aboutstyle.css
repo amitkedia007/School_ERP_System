@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+}
+.about{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0px;
+    color: #fff;
+}
+.about h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}

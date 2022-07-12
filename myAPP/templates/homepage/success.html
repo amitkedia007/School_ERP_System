@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Successful</title>
+</head>
+<body>
+<style>
+    body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url("{% static 'images/school.jpg' %}");
+    color: #fff;
+}
+body a{
+    color: lightgray;
+    font-size: 18px;
+    position:relative;
+    bottom:0;
+    width:100%;
+    text-align:center;
+    padding-left: 120px;
+    margin-bottom: 0;
+    text-decoration: underline;
+}
+</style>
+
+<div>
+    <h1> Your Details Has Been Successfully Registered</h1>
+    <a href="{% url 'login' %}">Login Here</a>
+    <a href= "{% url 'home' %}">Back To The Home Page</a>
+</div>
+</body>
+</html>

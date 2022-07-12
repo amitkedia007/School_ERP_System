@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="{% static 'homepagecss/css/stylehomepage.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,500;1,700&display=swap" rel="stylesheet">
+    <title>Seneca International School</title>
+</head>
+<body>
+<style>
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url("{% static 'images/school.jpg' %}");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+</style>
+    <section class="header">
+    <nav>
+        <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}"></a>
+        <div class="nav-links">
+            <ul>
+                <li><a href="{% url 'home' %}">HOME</a></li>
+                <li><a href="{% url 'about' %}">ABOUT</a> </li>
+                <li><a href="{% url 'contact' %}">CONTACT US</a> </li>
+                <li><a href="{% url 'login' %}"> LOGIN</a> </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="text-box">
+        <h1>One of the Finest School in India</h1>
+        <p>Seneca has been flourishing not only academically but also in different extra-curicular activities like sports, <br>public speaking
+            and many more areas that every student need to be awesome.</p>
+        <a href ="{% url 'studentreg' %}" class="hero-btn"> Student Section </a>
+        <a href="{% url 'askstaff' %}" class="hero-btn2"> Staff Section </a>
+    </div>
+    </section>
+</body>
+</html>

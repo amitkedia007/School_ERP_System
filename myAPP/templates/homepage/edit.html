@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Page</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'homepagecss/css/editstyle.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+ <style>
+     body{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url("{% static 'images/school.jpg' %}");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+      }
+    </style>
+	<h1>Edit Student's Details Here..</h1>
+	<form action="/editpage/" method="POST">
+		{% csrf_token %}
+		<table>
+            <tr>
+				<td>ID</td>
+				<td><input type="text" name="sid" value="{{student.sid}}"></td>
+			</tr>
+				<td>Full Name</td>
+				<td><input type="text" name="sname" value="{{student.ename}}"></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="text" name="semail" value="{{student.eemail}}"></td>
+			</tr>
+			<tr>
+				<td>Mobile No.</td>
+				<td><input type="text" name="smobileno" value="{{student.emobileno}}"></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="password" name="spassword" value="{{student.epassword}}"></td>
+			</tr>
+		</table>
+		<div class="update">
+		<button><input type="submit" value="Update"></button>
+		</div>
+	</form>
+
+</body>
+</html>

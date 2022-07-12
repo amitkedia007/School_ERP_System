@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="with=device-width, initial-scale=1.0">
+     <link rel="stylesheet"  href="{% static 'homepagecss/css/contactcss.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,500;1,700&display=swap" rel="stylesheet">
+    <title>Contact Us</title>
+</head>
+<body>
+<style>
+.contact{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url("{% static 'images/about.jpg' %}");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+</style>
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <form class="form">
+            <h3>Email Us: sanecainternation@gmail.com</h3>
+            <h3>Call Us: 9429278210</h3>
+        </form>
+    </section>
+</body>
+</html>
